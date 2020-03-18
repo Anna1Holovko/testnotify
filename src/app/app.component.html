@@ -1,0 +1,54 @@
+<div class="logo">Logo</div>
+
+<div class="map">
+  <agm-map [latitude]='latitude'
+           [longitude]='longitude'
+           [zoom]='zoom'
+           [mapTypeId]='mapType'>
+  </agm-map>
+  <div class="floater">Floater</div>
+</div>
+
+<div class="search-results"
+     infinite-scroll
+     [infiniteScrollDistance]="scrollDistance"
+     (scrolled)="onScrollDown(1)">
+  <p *ngFor="let i of array">{{ i }}</p>
+</div>
+
+<style>
+  .map{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+  }
+  agm-map {
+    height: 500px;
+    width: 1000px;
+  }
+  p {
+    /*border-style: solid; !* Стиль линии вокруг параграфа *!*/
+    padding: 0.1px; /* Поля вокруг текста */
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .logo{
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    width: 100px;
+    border-radius: 30px;
+    background: lightpink;
+    text-align: center;
+  }
+  .floater{
+    height: 100%;
+    background: orange;
+    color: black;
+    position: fixed;
+    right: 0;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: 50px;
+  }
+</style>
