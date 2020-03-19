@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
-declare var chance: any;
+declare let chance: any;
+declare let faker: any;
+
 
 @Component({
   selector: 'app-root',
@@ -24,8 +26,10 @@ export class AppComponent {
 
   // tslint:disable-next-line:variable-name
   addItems(startIndex, endIndex, _method) {
-    for (let i = 1; i < this.sum; ++i) {
-      this.array[_method]([i, ' ', this.generateWord()].join(''));
+    if (document.body.scrollTop < 100) {
+      for (let i = 1; i < this.sum; ++i) {
+        this.array[_method]([i, ' ', this.generateWord()].join(''));
+      }
     }
   }
 
@@ -45,7 +49,11 @@ export class AppComponent {
 
     this.direction = 'down';
   }
+
   generateWord() {
     return chance.paragraph();
+  }
+
+  generateAvatar() {
   }
 }
