@@ -28,7 +28,7 @@
     "Faker": "^0.7.2",
     "animate.css": "^3.7.2",
     "chance": "^1.1.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "js-image-generator": "^1.0.2",
     "ngx-infinite-scroll": "^8.0.1",
     "rxjs": "~6.5.4",
